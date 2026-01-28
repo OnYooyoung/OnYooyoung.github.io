@@ -13,7 +13,7 @@ $right-sidebar-width: 200px;
 $right-sidebar-width-wide: 250px;
 
 /* 3. 스킨 로드 (다크 모드 강제 적용 및 유지) */
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
+@import "minimal-mistakes/skins/dark";
 
 /* 4. 테마 본체 로드 */
 @import "minimal-mistakes";
