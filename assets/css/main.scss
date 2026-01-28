@@ -2,55 +2,55 @@
 # Front Matter 반드시 포함
 ---
 
-// /* 1. 기본 변수 로드 */
-// @import "minimal-mistakes/variables"; 
+/* 1. 기본 변수 로드 */
+@import "minimal-mistakes/variables"; 
 
-// /* 2. 사용자 정의 변수 (사이드바 및 기본 폰트) */
-// $doc-font-size: 14px; 
-// $type-size-4: 0.7em; // PC에서 아주 작게 보일 설정입니다.
+/* 2. 사용자 정의 변수 (사이드바 및 기본 폰트) */
+$doc-font-size: 14px; 
+$type-size-4: 0.7em; // PC에서 아주 작게 보일 설정입니다.
 
-// $right-sidebar-width-narrow: 100px;
-// $right-sidebar-width: 200px;
-// $right-sidebar-width-wide: 250px;
+$right-sidebar-width-narrow: 100px;
+$right-sidebar-width: 200px;
+$right-sidebar-width-wide: 250px;
 
-// /* 3. 스킨 로드 (다크 모드 강제 적용 및 유지) */
-// @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
+/* 3. 스킨 로드 (다크 모드 강제 적용 및 유지) */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 
-// /* 4. 테마 본체 로드 */
-// @import "minimal-mistakes";
+/* 4. 테마 본체 로드 */
+@import "minimal-mistakes";
 
-// /* 기본 설정 (모바일/전체 공통) */
-// .page__content {
-//   p, li, dl, blockquote {
-//     font-size: 1.1rem !important; /* 모바일에서는 시원하게 보임 */
-//     line-height: 1.6;
-//   }
-// }
+/* 기본 설정 (모바일/전체 공통) */
+.page__content {
+  p, li, dl, blockquote {
+    font-size: 1.1rem !important; /* 모바일에서는 시원하게 보임 */
+    line-height: 1.6;
+  }
+}
 
-// /* PC 환경 설정 (화면 너비 1024px 이상) */
-// @media (min-width: 1024px) {
-//   .page__content {
-//     p, li, dl, blockquote {
-//       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
-//       font-size: 0.85rem !important; 
-//     }
-//   }
+/* PC 환경 설정 (화면 너비 1024px 이상) */
+@media (min-width: 1024px) {
+  .page__content {
+    p, li, dl, blockquote {
+      /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
+      font-size: 0.85rem !important; 
+    }
+  }
 
-//   /* 제목 크기도 본문에 맞춰서 적절히 축소 */
-//   .page__content h1 { font-size: 1.7rem !important; }
-//   .page__content h2 { font-size: 1.3rem !important; }
-//   .page__content h3 { font-size: 1.1rem !important; }
+  /* 제목 크기도 본문에 맞춰서 적절히 축소 */
+  .page__content h1 { font-size: 1.7rem !important; }
+  .page__content h2 { font-size: 1.3rem !important; }
+  .page__content h3 { font-size: 1.1rem !important; }
 
-//   /* 오른쪽 목차 (TOC) */
-//   .sidebar__right {
-//     nav.toc {
-//       .toc__menu li, .toc__menu a {
-//         font-size: 13px !important;
-//         line-height: 1.3 !important;
-//       }
-//     }
-//   }
-// }
+  /* 오른쪽 목차 (TOC) */
+  .sidebar__right {
+    nav.toc {
+      .toc__menu li, .toc__menu a {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+    }
+  }
+}
 
 // /* ------------색깔--------------- */
 // $point-color: #00b7ff;
