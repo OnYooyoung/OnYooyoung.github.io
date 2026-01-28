@@ -76,6 +76,11 @@ $hover-point-color: #0085b9;
   text-decoration: none;
 }
 
+/* 프로필 소개 */
+.sidebar p {
+    font-size: 13px !important;
+}
+
 /* 포스트 목록의 제목 색상 */
 .archive__item-title {
   color: $point-color !important; /* 원하는 색상 코드로 변경 */
