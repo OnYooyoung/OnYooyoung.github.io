@@ -1,70 +1,171 @@
 ---
-# 이 빈 대시 두 줄(Front Matter)은 반드시 최상단에 있어야 합니다.
 ---
 
 /* 1. 기본 변수 로드 */
 @import "minimal-mistakes/variables"; 
 
-/* 2. 다크모드 스킨 강제 주입 */
-/* _config.yml 설정을 기다리지 않고 여기서 'dark'를 직접 로드하는 것이 가장 확실합니다. */
-@import "minimal-mistakes/skins/dark";
-
-/* 3. 테마 본체 로드 */
-@import "minimal-mistakes";
-
-/* 4. 사용자 정의 변수 (폰트 및 사이드바 너비) */
+/* 2. 사용자 정의 변수 (사이드바 및 기본 폰트) */
 $doc-font-size: 14px; 
-$type-size-4: 0.7em; 
+$type-size-4: 0.7em; // PC에서 아주 작게 보일 설정입니다.
 
 $right-sidebar-width-narrow: 100px;
 $right-sidebar-width: 200px;
 $right-sidebar-width-wide: 250px;
 
-/* --- 기본 설정 (모바일/전체 공통) --- */
+/* 3. 스킨 로드 (다크 모드 강제 적용 및 유지) */
+@import "minimal-mistakes/skins/dark";
+
+/* 4. 테마 본체 로드 */
+@import "minimal-mistakes";
+
+/* 기본 설정 (모바일/전체 공통) */
 .page__content {
   p, li, dl, blockquote {
-    font-size: 1.1rem !important;
+    font-size: 1.1rem !important; /* 모바일에서는 시원하게 보임 */
     line-height: 1.6;
-    color: #ccc !important; /* 본문 글자색 가독성 확보 */
   }
 }
 
-/* PC 환경 설정 (1024px 이상) */
+/* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
   .page__content {
     p, li, dl, blockquote {
+      /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
       font-size: 0.85rem !important; 
     }
   }
+
+  /* 제목 크기도 본문에 맞춰서 적절히 축소 */
   .page__content h1 { font-size: 1.7rem !important; }
   .page__content h2 { font-size: 1.3rem !important; }
   .page__content h3 { font-size: 1.1rem !important; }
+
+  /* 오른쪽 목차 (TOC) */
+  .sidebar__right {
+    nav.toc {
+      .toc__menu li, .toc__menu a {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+    }
+  }
 }
 
-/* ------------ 색상 커스텀 (포인트 컬러) --------------- */
+/* ------------색깔--------------- */
 $point-color: #00b7ff;
 $hover-point-color: #0085b9;
 
+/* 블로그 이름(사이트 타이틀) 색상 변경 */
 .site-title {
-  color: $point-color !important;
-  font-weight: bold;
+  color: $point-color !important; /* 원하는 색상 코드로 변경하세요 */
+  font-weight: bold; /* (선택) 글자 굵게 */
 }
-.site-title:hover { color: $hover-point-color !important; }
+/* 마우스를 올렸을 때(Hover) 색상 */
+.site-title:hover {
+  color: $hover-point-color !important;
+}
 
+/* 사이드바 프로필 이름 색상 */
 .author__name {
-  color: #ffde58 !important; /* 사이드바 이름 노란색 고정 */
+  color: #ffde58 !important; /* 원하는 색상 코드로 변경 */
   font-size: 15px !important;
 }
+/* 이름에 링크가 걸려있을 경우를 대비한 설정 */
+.author__name a {
+  color: inherit !important; /* 위에서 설정한 색상을 그대로 따름 */
+  text-decoration: none;
+}
 
+/* 포스트 목록의 제목 색상 */
 .archive__item-title {
-  color: $point-color !important;
+  color: $point-color !important; /* 원하는 색상 코드로 변경 */
   font-size: 19px !important;
 }
-.archive__item-title a { color: inherit !important; }
+/* 제목에 걸린 링크 색상 (실제 클릭되는 부분) */
+.archive__item-title a {
+  color: inherit !important; /* 위에서 설정한 색상을 그대로 따름 */
+  text-decoration: none;    /* 밑줄 제거 */
+}
+/* 마우스를 올렸을 때(Hover) 색상 변화 */
+.archive__item-title a:hover {
+  color: $hover-point-color !important; /* 마우스 올렸을 때 강조될 색상 */
+  text-decoration: underline; /* 마우스 올렸을 때만 밑줄 표시 (선택 사항) */
+}
 
-/* 인용구 및 TOC */
-blockquote { border-left: 5px solid $point-color !important; }
-.toc .nav__title { background: $point-color !important; }
+/* 현재 페이지 숫자 버튼 (활성화된 상태) */
+.pagination li a.current {
+  background-color: $point-color !important; /* 배경색 (원하는 색상으로) */
+  color: #eee !important;      
+}
+.pagination li a:hover {
+  background-color: #eee !important; /* 배경색 (원하는 색상으로) */
+  color: #3d4046 !important;            
+}
+/* 선택되지 않은 나머지 숫자 버튼들 */
+.pagination li a {
+  color: #fff !important;              /* 기본 글자색 */
+}
 
-/* 유튜브 아이콘 */
-.fab.fa-fw.fa-youtube { color: #ff0000 !important; }
+/* 검색 버튼(돋보기) 아이콘 색상 */
+.search__toggle {
+  color: $point-color !important; /* 원하는 색상 코드로 변경 */
+}
+/* 마우스를 올렸을 때(Hover) 색상 */
+.search__toggle:hover {
+  color: $hover-point-color !important; /* 마우스 올렸을 때 조금 더 밝은 색으로 */
+}
+
+/* 인용구 스타일 */
+blockquote {
+  border-left: 5px solid $point-color !important; /* 왼쪽 포인트 선 색상 */
+}
+/* 인용구 안에 있는 링크(a) 스타일 */
+blockquote a {
+  color: #9ddeff !important;       /* 인용구 내 링크 색상 (포인트 컬러) */
+}
+/* 인용구 링크에 마우스를 올렸을 때(Hover) */
+blockquote a:hover {
+  color: $hover-point-color !important;       /* 마우스 올렸을 때 더 진한 색으로 */
+}
+
+/* 이전/다음 글 링크 버튼 */
+.pagination--pager {
+  color: $point-color !important;           /* 글씨 색상 */
+}
+.pagination--pager:hover {
+  color: #252a34 !important;           /* 글씨 색상 */
+}
+
+/* TOC 제목 배경색 */
+.toc .nav__title {
+  background: $point-color !important;
+}
+/* 현재 읽고 있는 문단의 목차 강조 색상 */
+.toc__menu li.active a,
+.toc__menu a:hover {
+  color: $point-color !important; /* 마우스 올리거나 활성화된 목차 색상 */
+  background: #272a33 !important;
+}
+
+/* 태그 & 카테고리 버튼 기본 스타일 */
+/* 마우스를 올렸을 때 (Hover) */
+.page__taxonomy-item:hover {
+  color: $point-color !important;           /* 호버 시 글자색 */
+  transition: 0.3s;                    /* 부드럽게 변하는 효과 */
+}
+
+/* 퍼멀링크 아이콘 색상 */
+.header-link i, 
+.anchorjs-link {
+  color: $point-color !important;
+}
+.header-link:hover i,
+.anchorjs-link:hover {
+  color: $hover-point-color !important; /* 호버 시 더 진한 파란색 */
+  opacity: 1 !important;
+}
+
+/* 유튜브 아이콘 (YouTube) */
+.fab.fa-fw.fa-youtube {
+  color: #ff0000 !important; 
+}
