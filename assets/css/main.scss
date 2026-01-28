@@ -3,23 +3,21 @@
 ---
 
 /* 1. 기본 변수 로드 */
-@import "minimal-mistakes/variables";
+@import "minimal-mistakes/variables"; 
 
-/* 2. 스킨 로드 (가장 먼저 로드하여 기본 배경/글자색을 다크로 고정) */
-/* skin 설정이 'dark'가 아닐 경우를 대비해 변수를 강제합니다. */
-$minimal_mistakes_skin: "dark";
-@import "minimal-mistakes/skins/dark";
-
-/* 3. 테마 본체 로드 */
-@import "minimal-mistakes";
-
-/* 4. 사용자 정의 변수 (사이드바 및 기본 폰트) */
+/* 2. 사용자 정의 변수 (사이드바 및 기본 폰트) */
 $doc-font-size: 14px; 
 $type-size-4: 0.7em; // PC에서 아주 작게 보일 설정입니다.
 
 $right-sidebar-width-narrow: 100px;
 $right-sidebar-width: 200px;
 $right-sidebar-width-wide: 250px;
+
+/* 3. 스킨 로드 (다크 모드 강제 적용 및 유지) */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
+
+/* 4. 테마 본체 로드 */
+@import "minimal-mistakes";
 
 /* 기본 설정 (모바일/전체 공통) */
 .page__content {
