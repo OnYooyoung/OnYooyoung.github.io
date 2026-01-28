@@ -8,7 +8,7 @@
 #   - title: "About"
 #     url: /about/
 
-sidebar_menu:  # 이름을 main이 아닌 다른 걸로 변경
+sidebar_menu:  # 이름을 main이 아닌 다른 것으로 변경
   - title: "유니티 기초🐣"
     url: /categories/unity-basic/
     children:
