@@ -10,16 +10,22 @@
 $minimal_mistakes_skin: "dark";
 @import "minimal-mistakes/skins/dark";
 
-/* 3. 사용자 정의 변수 (사이드바 및 기본 폰트) */
+/* 3. 테마 본체 로드 */
+@import "minimal-mistakes";
+
+/* 4. 다크모드 강제 고정 (이 부분이 핵심입니다) */
+body {
+  background-color: #1d2021 !important; /* 다크 기본 배경색 */
+  color: #dddddd !important;           /* 기본 글자색 */
+}
+
+/* 5. 사용자 정의 변수 (사이드바 및 기본 폰트) */
 $doc-font-size: 14px; 
 $type-size-4: 0.7em; // PC에서 아주 작게 보일 설정입니다.
 
 $right-sidebar-width-narrow: 100px;
 $right-sidebar-width: 200px;
 $right-sidebar-width-wide: 250px;
-
-/* 4. 테마 본체 로드 */
-@import "minimal-mistakes";
 
 /* 기본 설정 (모바일/전체 공통) */
 .page__content {
