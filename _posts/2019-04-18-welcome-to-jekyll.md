@@ -1,5 +1,7 @@
 ---
 title: "Welcome to Jekyll!"
+toc: true          # 이 부분이 true여야 합니다.
+toc_sticky: true
 date: 2019-04-18T15:34:30-04:00
 categories:
   - blog
