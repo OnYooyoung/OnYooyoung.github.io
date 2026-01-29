@@ -3,7 +3,6 @@
 @import "minimal-mistakes/skins/dark";
 @import "minimal-mistakes";
 
-$doc-content-width: 1000px; // 본문 영역 너비 (중요: 이걸 키워야 오른쪽 여백이 본문으로 채워집니다)
 $doc-font-size: 13px; 
 $type-size-4: 0.8em; // PC에서 아주 작게 보일 설정입니다.
 
@@ -24,6 +23,10 @@ $right-sidebar-width-wide: 250px;
 
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
+  .page {
+        width: 1000px; // calc(100% - 200px);
+        padding-inline-end: 140px; // 오른쪽 패딩
+    }
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
