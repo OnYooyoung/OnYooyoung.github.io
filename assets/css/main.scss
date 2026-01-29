@@ -3,13 +3,14 @@
 @import "minimal-mistakes/skins/dark";
 @import "minimal-mistakes";
 
+/* 사용자 정의 변수 (사이드바 및 기본 폰트) */
 $doc-font-size: 13px; 
 $type-size-4: 0.8em; // PC에서 아주 작게 보일 설정입니다.
 
 /* 목차 */
 $right-sidebar-width-narrow: 100px;
-$right-sidebar-width: 100px;
-$right-sidebar-width-wide: 100px;
+$right-sidebar-width: 200px;
+$right-sidebar-width-wide: 250px;
 
 /* 모바일 화면 (최대 너비 600px 미만) 설정 */
 @media (max-width: 599px) {
@@ -23,31 +24,11 @@ $right-sidebar-width-wide: 100px;
 
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
-  #main {
-    max-width: 1200px;
-  }
-  /* 본문 전체를 왼쪽으로 이동 */
-  .wrapper {
-    max-width: 1200px;    /* 전체 폭을 조금 넓게 설정하거나 해제 */
-    margin-left: 20px !important; /* 왼쪽 여백을 최소화 (수치 조절 가능) */
-    margin-right: auto !important;
-  }
-  /* 사이드바와 본문을 감싸는 레이아웃 조정 */
-  .sidebar {
-      margin-left: 0 !important; /* 사이드바 왼쪽 여백 제거 */
-  }
-  .page {
-      width: 1000px; // calc(100% - 200px);
-      padding-inline-end: 200px; // 오른쪽 패딩
-  }
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
       font-size: 0.8rem !important; 
     }
-  }
-  .sidebar.sticky { // 프로필 사이즈
-      width: 200px;
   }
 
   /* 제목 크기도 본문에 맞춰서 적절히 축소 */
