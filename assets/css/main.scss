@@ -4,20 +4,20 @@
 @import "minimal-mistakes";
 
 /* ===============================
-   기본 폰트 설정
+   기본 설정
 ================================ */
 $doc-font-size: 13px;
 $type-size-4: 0.8em;
 
 /* ===============================
-   오른쪽 TOC 너비 변수
+   TOC 너비 (정석 방식)
 ================================ */
 $right-sidebar-width: 200px;
-$right-sidebar-width-narrow: 100px;
-$right-sidebar-width-wide: 250px;
+$right-sidebar-width-narrow: 200px;
+$right-sidebar-width-wide: 200px;
 
 /* ===============================
-   모바일 설정
+   모바일
 ================================ */
 @media (max-width: 599px) {
   .page__content {
@@ -29,162 +29,176 @@ $right-sidebar-width-wide: 250px;
 }
 
 /* ===============================
-   PC 레이아웃 (핵심)
+   PC 레이아웃 (정답)
 ================================ */
 @media (min-width: 1024px) {
 
   /* 전체 프레임 */
   .page {
-    max-width: 1200px !important;
+    max-width: 1200px;
   }
 
-  /* 본문 + TOC 래퍼 */
+  /* flex 부모 */
   .page__inner-wrap {
-    max-width: 1200px !important;
+    max-width: 1200px;
   }
 
-  /* 실제 본문 폭 */
+  /* 본문 – 절대 width 금지 */
   .page__content {
-    width: 950px !important;
-    max-width: 950px !important;
+    max-width: 950px;
+    flex: 1 1 auto;
   }
 
-  /* 본문 텍스트 */
+  /* 오른쪽 TOC – flex 기준으로 제어 */
+  .sidebar__right {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+
+  /* 본문 폰트 */
   .page__content p,
   .page__content li,
   .page__content dl,
   .page__content blockquote {
-    font-size: 0.8rem !important;
+    font-size: 0.8rem;
   }
 
-  /* 제목 크기 */
-  .page__content h1 { font-size: 1.4rem !important; }
-  .page__content h2 { font-size: 1.2rem !important; }
-  .page__content h3 { font-size: 1rem !important; }
-
-  /* 오른쪽 TOC */
-  .sidebar__right {
-    width: 200px !important;
-  }
-
-  .sidebar__right nav.toc .toc__menu li,
-  .sidebar__right nav.toc .toc__menu a {
-    font-size: 13px !important;
-    line-height: 1.3 !important;
-  }
+  /* 제목 */
+  .page__content h1 { font-size: 1.4rem; }
+  .page__content h2 { font-size: 1.2rem; }
+  .page__content h3 { font-size: 1rem; }
 }
 
 /* ===============================
-   컬러 변수
+   가로 스크롤 방지 (보험)
+================================ */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   색상
 ================================ */
 $point-color: #6db5f8;
 $hover-point-color: #3871a7;
 
-/* 사이트 타이틀 */
+/* 블로그 이름(사이트 타이틀) 색상 변경 */
 .site-title {
-  color: $point-color !important;
-  font-weight: bold;
+  color: $point-color !important; /* 원하는 색상 코드로 변경하세요 */
+  font-weight: bold; /* (선택) 글자 굵게 */
 }
+/* 마우스를 올렸을 때(Hover) 색상 */
 .site-title:hover {
   color: $hover-point-color !important;
 }
 
-/* 사이드바 프로필 */
+/* 사이드바 프로필 이름 색상 */
 .author__name {
-  color: #ffde58 !important;
+  color: #ffde58 !important; /* 원하는 색상 코드로 변경 */
   font-size: 17px !important;
 }
+/* 이름에 링크가 걸려있을 경우를 대비한 설정 */
 .author__name a {
-  color: inherit !important;
+  color: inherit !important; /* 위에서 설정한 색상을 그대로 따름 */
   text-decoration: none;
 }
+
+/* 프로필 소개 */
 .sidebar p {
-  font-size: 15px !important;
+    font-size: 15px !important;
 }
 
-/* 포스트 목록 제목 */
+/* 포스트 목록의 제목 색상 */
 .archive__item-title {
-  color: $point-color !important;
+  color: $point-color !important; /* 원하는 색상 코드로 변경 */
   font-size: 19px !important;
 }
+/* 제목에 걸린 링크 색상 (실제 클릭되는 부분) */
 .archive__item-title a {
-  color: inherit !important;
-  text-decoration: none;
+  color: inherit !important; /* 위에서 설정한 색상을 그대로 따름 */
+  text-decoration: none;    /* 밑줄 제거 */
 }
+/* 마우스를 올렸을 때(Hover) 색상 변화 */
 .archive__item-title a:hover {
-  color: $hover-point-color !important;
-  text-decoration: underline;
+  color: $hover-point-color !important; /* 마우스 올렸을 때 강조될 색상 */
+  text-decoration: underline; /* 마우스 올렸을 때만 밑줄 표시 (선택 사항) */
 }
 
-/* 페이지네이션 */
+/* 현재 페이지 숫자 버튼 (활성화된 상태) */
 .pagination li a.current {
-  background-color: $point-color !important;
-  color: #eee !important;
+  background-color: $point-color !important; /* 배경색 (원하는 색상으로) */
+  color: #eee !important;      
 }
 .pagination li a:hover {
-  background-color: #eee !important;
-  color: #3d4046 !important;
+  background-color: #eee !important; /* 배경색 (원하는 색상으로) */
+  color: #3d4046 !important;            
 }
+/* 선택되지 않은 나머지 숫자 버튼들 */
 .pagination li a {
-  color: #fff !important;
+  color: #fff !important;              /* 기본 글자색 */
 }
 
-/* 검색 아이콘 */
+/* 검색 버튼(돋보기) 아이콘 색상 */
 .search__toggle {
-  color: $point-color !important;
+  color: $point-color !important; /* 원하는 색상 코드로 변경 */
 }
+/* 마우스를 올렸을 때(Hover) 색상 */
 .search__toggle:hover {
-  color: $hover-point-color !important;
+  color: $hover-point-color !important; /* 마우스 올렸을 때 조금 더 밝은 색으로 */
 }
 
-/* 인용구 */
+/* 인용구 스타일 */
 blockquote {
-  color: #838893 !important;
-  border-left: 5px solid $point-color !important;
+  color: #838893 !important; // 인용구 사이 글자 색상
+  border-left: 5px solid $point-color !important; /* 왼쪽 포인트 선 색상 */
 }
+/* 인용구 안에 있는 링크(a) 스타일 */
 blockquote a {
-  color: #838893 !important;
+  color: #838893 !important;       /* 인용구 내 링크 색상 (포인트 컬러) */
 }
+/* 인용구 링크에 마우스를 올렸을 때(Hover) */
 blockquote a:hover {
-  color: $hover-point-color !important;
+  color: $hover-point-color !important;       /* 마우스 올렸을 때 더 진한 색으로 */
 }
 
-/* 이전/다음 글 */
+/* 이전/다음 글 링크 버튼 */
 .pagination--pager {
-  color: $point-color !important;
+  color: $point-color !important;           /* 글씨 색상 */
 }
 .pagination--pager:hover {
-  color: #252a34 !important;
+  color: #252a34 !important;           /* 글씨 색상 */
 }
 
-/* TOC */
+/* TOC 제목 배경색 */
 .toc .nav__title {
   background: $point-color !important;
 }
+/* 현재 읽고 있는 문단의 목차 강조 색상 */
 .toc__menu li.active a,
 .toc__menu a:hover {
-  color: $point-color !important;
+  color: $point-color !important; /* 마우스 올리거나 활성화된 목차 색상 */
   background: #272a33 !important;
 }
 
-/* 태그 / 카테고리 */
+/* 태그 & 카테고리 버튼 기본 스타일 */
+/* 마우스를 올렸을 때 (Hover) */
 .page__taxonomy-item:hover {
-  color: $point-color !important;
-  transition: 0.3s;
+  color: $point-color !important;           /* 호버 시 글자색 */
+  transition: 0.3s;                    /* 부드럽게 변하는 효과 */
 }
 
-/* 퍼멀링크 */
-.header-link i,
+/* 퍼멀링크 아이콘 색상 */
+.header-link i, 
 .anchorjs-link {
   color: $point-color !important;
 }
 .header-link:hover i,
 .anchorjs-link:hover {
-  color: $hover-point-color !important;
+  color: $hover-point-color !important; /* 호버 시 더 진한 파란색 */
   opacity: 1 !important;
 }
 
-/* YouTube 아이콘 */
+/* 유튜브 아이콘 (YouTube) */
 .fab.fa-fw.fa-youtube {
-  color: #ff0000 !important;
+  color: #ff0000 !important; 
 }
