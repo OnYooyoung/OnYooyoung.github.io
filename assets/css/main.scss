@@ -28,9 +28,9 @@ $right-sidebar-width-wide: 250px;
   }
   /* 본문 전체를 왼쪽으로 이동 */
   .wrapper {
-    margin-left: 10% !important;  /* 수치는 취향껏 조절 (기본은 보통 auto) */
+    margin-left: 1% !important;  /* 수치는 취향껏 조절 (기본은 보통 auto) */
     margin-right: auto !important;
-    max-width: 800px;             /* 본문 폭이 너무 넓어지지 않게 고정 */
+    max-width: 950px;             /* 본문 폭이 너무 넓어지지 않게 고정 */
   }
   .page {
       width: 1000px; // calc(100% - 200px);
