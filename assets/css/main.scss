@@ -167,10 +167,9 @@ blockquote a:hover {
 /* TOC 제목 배경색 */
 .toc .nav__title {
   background: $point-color !important;
-  font-size: 15px;
+  font-size: 15px !important;
 }
 /* 현재 읽고 있는 문단의 목차 강조 색상 */
-.toc__menu li.active a,
 .toc__menu a:hover {
   color: $point-color !important; /* 마우스 올리거나 활성화된 목차 색상 */
   background: #272a33 !important;
