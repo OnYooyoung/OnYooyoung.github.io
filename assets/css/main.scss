@@ -24,13 +24,17 @@ $right-sidebar-width-wide: 250px;
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
   #main {
-    max-width: 1300px;
+    max-width: 1200px;
   }
   /* 본문 전체를 왼쪽으로 이동 */
   .wrapper {
-    margin-left: 1% !important;  /* 수치는 취향껏 조절 (기본은 보통 auto) */
+    max-width: 1200px;    /* 전체 폭을 조금 넓게 설정하거나 해제 */
+    margin-left: 20px !important; /* 왼쪽 여백을 최소화 (수치 조절 가능) */
     margin-right: auto !important;
-    max-width: 950px;             /* 본문 폭이 너무 넓어지지 않게 고정 */
+  }
+  /* 사이드바와 본문을 감싸는 레이아웃 조정 */
+  .sidebar {
+      margin-left: 0 !important; /* 사이드바 왼쪽 여백 제거 */
   }
   .page {
       width: 1000px; // calc(100% - 200px);
