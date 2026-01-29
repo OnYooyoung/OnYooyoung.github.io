@@ -12,40 +12,40 @@ $right-sidebar-width-narrow: 100px;
 $right-sidebar-width: 200px;
 $right-sidebar-width-wide: 250px;
 
-// /* 모바일 화면 (최대 너비 600px 미만) 설정 */
-// @media (max-width: 599px) {
-//   .page__content {
-//     p, li, dl, blockquote {
-//       font-size: 1.1rem !important; /* 모바일에서 시원하게 보이도록 설정 */
-//       line-height: 1.6;
-//     }
-//   }
-// }
+/* 모바일 화면 (최대 너비 600px 미만) 설정 */
+@media (max-width: 599px) {
+  .page__content {
+    p, li, dl, blockquote {
+      font-size: 1.1rem !important; /* 모바일에서 시원하게 보이도록 설정 */
+      line-height: 1.6;
+    }
+  }
+}
 
-// /* PC 환경 설정 (화면 너비 1024px 이상) */
-// @media (min-width: 1024px) {
-//   .page__content {
-//     p, li, dl, blockquote {
-//       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
-//       font-size: 0.8rem !important; 
-//     }
-//   }
+/* PC 환경 설정 (화면 너비 1024px 이상) */
+@media (min-width: 1024px) {
+  .page__content {
+    p, li, dl, blockquote {
+      /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
+      font-size: 0.8rem !important; 
+    }
+  }
 
-//   /* 제목 크기도 본문에 맞춰서 적절히 축소 */
-//   .page__content h1 { font-size: 1.4rem !important; }
-//   .page__content h2 { font-size: 1.2rem !important; }
-//   .page__content h3 { font-size: 1rem !important; }
+  /* 제목 크기도 본문에 맞춰서 적절히 축소 */
+  .page__content h1 { font-size: 1.4rem !important; }
+  .page__content h2 { font-size: 1.2rem !important; }
+  .page__content h3 { font-size: 1rem !important; }
 
-//   /* 오른쪽 목차 (TOC) */
-//   .sidebar__right {
-//     nav.toc {
-//       .toc__menu li, .toc__menu a {
-//         font-size: 13px !important;
-//         line-height: 1.3 !important;
-//       }
-//     }
-//   }
-// }
+  /* 오른쪽 목차 (TOC) */
+  .sidebar__right {
+    nav.toc {
+      .toc__menu li, .toc__menu a {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+    }
+  }
+}
 
 /* ------------색깔--------------- */
 $point-color: #6db5f8;
@@ -146,12 +146,14 @@ blockquote a:hover {
 /* TOC 제목 배경색 */
 .toc .nav__title {
   background: $point-color !important;
+  font-size: 10px !important;
 }
 /* 현재 읽고 있는 문단의 목차 강조 색상 */
 .toc__menu li.active a,
 .toc__menu a:hover {
   color: $point-color !important; /* 마우스 올리거나 활성화된 목차 색상 */
   background: #272a33 !important;
+  font-size: 8px !important;
 }
 
 /* 태그 & 카테고리 버튼 기본 스타일 */
