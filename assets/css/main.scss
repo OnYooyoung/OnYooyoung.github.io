@@ -4,8 +4,8 @@
 @import "minimal-mistakes";
 
 /* 사용자 정의 변수 (사이드바 및 기본 폰트) */
-$doc-font-size: 14px; 
-$type-size-4: 0.7em; // PC에서 아주 작게 보일 설정입니다.
+$doc-font-size: 13px; 
+$type-size-4: 0.8em; // PC에서 아주 작게 보일 설정입니다.
 
 $right-sidebar-width-narrow: 100px;
 $right-sidebar-width: 200px;
@@ -24,14 +24,14 @@ $right-sidebar-width-wide: 250px;
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
-      font-size: 0.85rem !important; 
+      font-size: 0.8rem !important; 
     }
   }
 
   /* 제목 크기도 본문에 맞춰서 적절히 축소 */
-  .page__content h1 { font-size: 1.7rem !important; }
-  .page__content h2 { font-size: 1.3rem !important; }
-  .page__content h3 { font-size: 1.1rem !important; }
+  .page__content h1 { font-size: 1.4rem !important; }
+  .page__content h2 { font-size: 1.2rem !important; }
+  .page__content h3 { font-size: 1rem !important; }
 
   /* 오른쪽 목차 (TOC) */
   .sidebar__right {
@@ -45,8 +45,8 @@ $right-sidebar-width-wide: 250px;
 }
 
 /* ------------색깔--------------- */
-$point-color: #00b7ff;
-$hover-point-color: #0085b9;
+$point-color: #6db5f8;
+$hover-point-color: #3871a7;
 
 /* 블로그 이름(사이트 타이틀) 색상 변경 */
 .site-title {
@@ -61,7 +61,7 @@ $hover-point-color: #0085b9;
 /* 사이드바 프로필 이름 색상 */
 .author__name {
   color: #ffde58 !important; /* 원하는 색상 코드로 변경 */
-  font-size: 15px !important;
+  font-size: 16px !important;
 }
 /* 이름에 링크가 걸려있을 경우를 대비한 설정 */
 .author__name a {
@@ -71,7 +71,7 @@ $hover-point-color: #0085b9;
 
 /* 프로필 소개 */
 .sidebar p {
-    font-size: 13px !important;
+    font-size: 15px !important;
 }
 
 /* 포스트 목록의 제목 색상 */
@@ -115,11 +115,12 @@ $hover-point-color: #0085b9;
 
 /* 인용구 스타일 */
 blockquote {
+  color: #838893 !important; // 인용구 사이 글자 색상
   border-left: 5px solid $point-color !important; /* 왼쪽 포인트 선 색상 */
 }
 /* 인용구 안에 있는 링크(a) 스타일 */
 blockquote a {
-  color: #9ddeff !important;       /* 인용구 내 링크 색상 (포인트 컬러) */
+  color: #838893 !important;       /* 인용구 내 링크 색상 (포인트 컬러) */
 }
 /* 인용구 링크에 마우스를 올렸을 때(Hover) */
 blockquote a:hover {
