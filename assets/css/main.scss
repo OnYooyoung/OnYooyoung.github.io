@@ -33,6 +33,9 @@ $right-sidebar-width-wide: 250px;
       font-size: 0.8rem !important; 
     }
   }
+  .sidebar.sticky { // 프로필 사이즈
+        width: 200px;
+  }
 
   /* 제목 크기도 본문에 맞춰서 적절히 축소 */
   .page__content h1 { font-size: 1.4rem !important; }
