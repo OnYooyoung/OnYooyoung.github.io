@@ -77,6 +77,11 @@ $hover-point-color: #3871a7;
     font-size: 15px !important;
 }
 
+/* 본문 제목 */
+.page__title a {
+    font-size: 20px !important;
+}
+
 /* 포스트 목록의 제목 색상 */
 .archive__item-title {
   color: $point-color !important; /* 원하는 색상 코드로 변경 */
@@ -170,4 +175,14 @@ blockquote a:hover {
 /* 유튜브 아이콘 (YouTube) */
 .fab.fa-fw.fa-youtube {
   color: #ff0000 !important; 
+}
+
+// 푸터
+.page__footer-follow ul {
+    font-size: 18px;
+}
+
+// 저작권 표시
+.page__footer-copyright {
+    font-size: 12px;
 }
