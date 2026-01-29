@@ -24,6 +24,17 @@ $right-sidebar-width-wide: 250px !important;
 
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
+  .page {
+    max-width: 1200px !important; /* 전체 프레임 */
+  }
+
+  .page__inner-wrap {
+    max-width: 950px !important; /* 실제 본문 */
+  }
+
+  .initial-content {
+    max-width: 950px !important;
+  }
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
