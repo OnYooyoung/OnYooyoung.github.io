@@ -4,7 +4,6 @@
 @import "minimal-mistakes";
 
 /* 사용자 정의 변수 (사이드바 및 기본 폰트) */
-$sidebar-width: 100px;
 $doc-font-size: 13px; 
 $type-size-4: 0.8em; // PC에서 아주 작게 보일 설정입니다.
 
@@ -23,6 +22,10 @@ $right-sidebar-width-wide: 250px;
 
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
+  /* 1. 왼쪽 사이드바 자체의 너비 강제 고정 */
+  .sidebar {
+    width: 150px !important; /* 원래 약 300px인 것을 절반으로 줄임 */
+  }
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
