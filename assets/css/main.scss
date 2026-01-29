@@ -54,7 +54,7 @@ $right-sidebar-width-wide: 250px;
 
   // 본문 왼쪽으로
   .page .page__inner-wrap {
-    margin-left: -40px;
+    margin-left: -80px;
     width: 800px;
   }
 }
@@ -91,7 +91,7 @@ $hover-point-color: #3871a7;
 
 /* 본문 제목 */
 .page__title a {
-    font-size: 20px !important;
+    font-size: 25px !important;
 }
 
 /* 포스트 목록의 제목 색상 */
@@ -200,4 +200,14 @@ blockquote a:hover {
 // 저작권 표시
 .page__footer-copyright {
     font-size: 12px;
+}
+
+// 관련글 왼쪽으로
+.page__related {
+    width: 1024px;
+}
+
+// 다음, 이전 글 버튼
+.pagination {
+    font-size: 16px;
 }
