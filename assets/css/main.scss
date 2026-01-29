@@ -49,12 +49,12 @@ $right-sidebar-width-wide: 250px;
   // 사이드바 크기, 왼쪽으로
   .sidebar.sticky {
     width: 200px;
-    //margin-left: -20px;
+    margin-left: -20px;
   }
 
   // 본문 왼쪽으로
   .page .page__inner-wrap {
-    //margin-left: -80px;
+    margin-left: -80px;
     width: 800px;
   }
 }
