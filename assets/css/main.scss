@@ -45,6 +45,17 @@ $right-sidebar-width-wide: 250px;
       }
     }
   }
+
+  // 사이드바
+  .sidebar.sticky {
+    width: 200px;
+  }
+
+  // 본문 왼쪽으로
+  .page .page__inner-wrap {
+    margin-left: 2px;
+    width: 800px;
+  }
 }
 
 /* ------------색깔--------------- */
