@@ -7,10 +7,13 @@
 $doc-font-size: 13px; 
 $type-size-4: 0.8em; // PC에서 아주 작게 보일 설정입니다.
 
+/* 전체 컨테이너 확장 (본문 950px 확보를 위해 1280px 이상 권장) */
+$max-width: 1400px;
+
 /* 목차 */
-$right-sidebar-width-narrow: 100px;
-$right-sidebar-width: 200px;
-$right-sidebar-width-wide: 250px;
+$right-sidebar-width-narrow: 80px;
+$right-sidebar-width: 150px;
+$right-sidebar-width-wide: 200px;
 
 /* 모바일 화면 (최대 너비 600px 미만) 설정 */
 @media (max-width: 599px) {
@@ -24,6 +27,16 @@ $right-sidebar-width-wide: 250px;
 
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
+  /* 본문 영역을 950px로 확장 */
+  .page {
+    width: 950px !important;
+    max-width: 950px !important;
+    padding-right: 20px !important; /* TOC와의 간격 */
+  }
+  /* 왼쪽 사이드바 크기 고정 */
+  .sidebar {
+    width: 200px !important; 
+  }
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
@@ -38,6 +51,8 @@ $right-sidebar-width-wide: 250px;
 
   /* 오른쪽 목차 (TOC) */
   .sidebar__right {
+    width: $right-sidebar-width !important;
+    margin-right: -180px !important; /* 본문 밖으로 밀어내기 (값 조정 필요할 수 있음) */
     nav.toc {
       .toc__menu li, .toc__menu a {
         font-size: 13px !important;
