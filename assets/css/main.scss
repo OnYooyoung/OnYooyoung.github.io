@@ -23,10 +23,19 @@ $right-sidebar-width-wide: 250px;
 
 /* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
+  #main {
+    max-width: 1300px;
+  }
+  /* 본문 전체를 왼쪽으로 이동 */
+  .wrapper {
+    margin-left: 10% !important;  /* 수치는 취향껏 조절 (기본은 보통 auto) */
+    margin-right: auto !important;
+    max-width: 800px;             /* 본문 폭이 너무 넓어지지 않게 고정 */
+  }
   .page {
-        width: 1000px; // calc(100% - 200px);
-        padding-inline-end: 140px; // 오른쪽 패딩
-    }
+      width: 1000px; // calc(100% - 200px);
+      padding-inline-end: 200px; // 오른쪽 패딩
+  }
   .page__content {
     p, li, dl, blockquote {
       /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
@@ -34,7 +43,7 @@ $right-sidebar-width-wide: 250px;
     }
   }
   .sidebar.sticky { // 프로필 사이즈
-        width: 200px;
+      width: 200px;
   }
 
   /* 제목 크기도 본문에 맞춰서 적절히 축소 */
