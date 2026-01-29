@@ -3,82 +3,51 @@
 @import "minimal-mistakes/skins/dark";
 @import "minimal-mistakes";
 
-/* ===============================
-   기본 설정
-================================ */
-$doc-font-size: 13px;
-$type-size-4: 0.8em;
+$doc-content-width: 950px; // 본문 영역 너비 (중요: 이걸 키워야 오른쪽 여백이 본문으로 채워집니다)
+$doc-font-size: 13px; 
+$type-size-4: 0.8em; // PC에서 아주 작게 보일 설정입니다.
 
-/* ===============================
-   TOC 너비 (정석 방식)
-================================ */
+/* 목차 */
+$right-sidebar-width-narrow: 100px;
 $right-sidebar-width: 200px;
-$right-sidebar-width-narrow: 200px;
-$right-sidebar-width-wide: 200px;
+$right-sidebar-width-wide: 250px;
 
-/* ===============================
-   모바일
-================================ */
+/* 모바일 화면 (최대 너비 600px 미만) 설정 */
 @media (max-width: 599px) {
   .page__content {
     p, li, dl, blockquote {
-      font-size: 1.1rem !important;
+      font-size: 1.1rem !important; /* 모바일에서 시원하게 보이도록 설정 */
       line-height: 1.6;
     }
   }
 }
 
-/* ===============================
-   PC 레이아웃 (정답)
-================================ */
+/* PC 환경 설정 (화면 너비 1024px 이상) */
 @media (min-width: 1024px) {
-
-  /* 전체 프레임 */
-  .page {
-    max-width: 1200px;
-  }
-
-  /* flex 부모 */
-  .page__inner-wrap {
-    max-width: 1200px;
-  }
-
-  /* 본문 – 절대 width 금지 */
   .page__content {
-    max-width: 950px;
-    flex: 1 1 auto;
+    p, li, dl, blockquote {
+      /* 사용자님이 설정한 변수($type-size-4) 급으로 작게 고정 */
+      font-size: 0.8rem !important; 
+    }
   }
 
-  /* 오른쪽 TOC – flex 기준으로 제어 */
+  /* 제목 크기도 본문에 맞춰서 적절히 축소 */
+  .page__content h1 { font-size: 1.4rem !important; }
+  .page__content h2 { font-size: 1.2rem !important; }
+  .page__content h3 { font-size: 1rem !important; }
+
+  /* 오른쪽 목차 (TOC) */
   .sidebar__right {
-    flex: 0 0 200px;
-    max-width: 200px;
+    nav.toc {
+      .toc__menu li, .toc__menu a {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+    }
   }
-
-  /* 본문 폰트 */
-  .page__content p,
-  .page__content li,
-  .page__content dl,
-  .page__content blockquote {
-    font-size: 0.8rem;
-  }
-
-  /* 제목 */
-  .page__content h1 { font-size: 1.4rem; }
-  .page__content h2 { font-size: 1.2rem; }
-  .page__content h3 { font-size: 1rem; }
 }
 
-/* ===============================
-   가로 스크롤 방지 (보험)
-================================ */
-html, body {
-  overflow-x: hidden;
-}
-
-/* ===============================
-   색상
-================================ */
+/* ------------색깔--------------- */
 $point-color: #6db5f8;
 $hover-point-color: #3871a7;
 
