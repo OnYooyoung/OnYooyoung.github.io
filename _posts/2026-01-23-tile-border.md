@@ -1,6 +1,8 @@
 ﻿---
 title: "Box collider 타일 위 이동 제한"
 date: 2026-01-23 18:04 +0900
+toc: true
+toc_sticky: true
 categories:
   - unity-basic
   - 2d-robot-repair
@@ -10,7 +12,7 @@ tags:
   - Basic
 ---
 
-### [Unit] Game environment and physics > [Tutorial] Set up tilemap collision
+## [Unit] Game environment and physics > [Tutorial] Set up tilemap collision
 
 1단계: 타일맵에 "벽" 설치하기 (전체 차단)
 - Hierarchy 창 → Grid 안의 Tilemap 선택 → Add Component 버튼 클릭 → Tilemap Collider 2D 추가

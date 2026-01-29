@@ -1,5 +1,7 @@
 ﻿---
 title: "플레이어 이동"
+toc: true
+toc_sticky: true
 date: 2026-01-22 19:16 +0900
 categories:
   - unity-basic
@@ -10,7 +12,7 @@ tags:
   - Basic
 ---
 
-#### [Unit] [Unit] Player character and movement > [Tutorial] Create Input Actions for player character movement
+## [Unit] [Unit] Player character and movement > [Tutorial] Create Input Actions for player character movement
 
 ```csharp
 using UnityEngine;
@@ -51,20 +53,20 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-#### 🔍 3.0f (속도 조절)
+## 🔍 3.0f (속도 조절)
 
 역할: 이동 속도를 결정합니다.
 move 값은 보통 -1에서 1 사이의 아주 작은 값입니다. 여기에 3.0을 곱해줌으로써 우리가 눈으로 볼 수 있을 만큼 빠르게 움직이게 만듭니다.  
 
-#### 🔍 Time.deltaTime (프레임 보정 - 가장 중요!)
+## 🔍 Time.deltaTime (프레임 보정 - 가장 중요!)
 
 - 문제점: 컴퓨터 사양이 좋아서 초당 144프레임이 나오는 사람과, 사양이 낮아 30프레임이 나오는 사람이 있다면? 그냥 움직일 시 성능 좋은 컴퓨터에서 캐릭터가 훨씬 빨리 움직이게 됩니다.
 - 해결: Time.deltaTime은 **"이전 프레임에서 현재 프레임까지 걸린 시간"**을 의미합니다.
 - 결과: 이 값을 곱해주면 컴퓨터 성능에 관계없이 모든 플레이어가 1초에 정확히 3.0만큼 이동하게 됩니다. (부드러운 이동의 필수 요소입니다.)
 
 ---
-#### [Unit] Player character and movement > Implement object collisions for your 2D game
-#### ⚠️ 캐릭터가 물체와 충돌 시 지터링(Jittering, 떨림)이 생기는 이유 (비유)
+## [Unit] Player character and movement > Implement object collisions for your 2D game
+## ⚠️ 캐릭터가 물체와 충돌 시 지터링(Jittering, 떨림)이 생기는 이유 (비유)
 
 캐릭터가 벽을 뚫고 지나가려고 할 때, 1초에 수십 번씩 이런 일이 벌어지는 겁니다.
 
@@ -75,7 +77,7 @@ move 값은 보통 -1에서 1 사이의 아주 작은 값입니다. 여기에 3.
 
  
 
-#### ✅ 해결
+## ✅ 해결
 
 게임 오브젝트를 Transform 컴포넌트 대신 Rigidbody 2D 컴포넌트를 사용하여 이동해야 합니다
 
@@ -132,14 +134,14 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-#### ❓ 왜 FixedUpdate 이어야 하나요?
+## ❓ 왜 FixedUpdate 이어야 하나요?
 
 박자 일치: 물리 엔진은 **정해진 시간(0.02초)**마다 계산하는데, 이 박자에 맞춰 명령을 내릴 수 있는 곳이 FixedUpdate뿐이기 때문입니다. (불규칙한 Update에서 하면 박자가 꼬여서 떨림 발생)
 계산 순서: 유니티는 [이동 명령(FixedUpdate) → 물리 계산 → 화면 표시(Update)] 순서로 일합니다. 즉, 물리 엔진이 계산을 시작하기 직전에 이동 경로를 알려줘야 충돌 처리가 완벽해집니다.
 Update: 키보드 입력 감지 (반응속도 중요)
 FixedUpdate: 실제 캐릭터 이동 (물리 규칙 준수) 
 
-#### ❓ Time.deltaTime?
+## ❓ Time.deltaTime?
 
 FixedUpdate 안에서 Time.deltaTime을 쓰면, 유니티는 똑똑하게도 Time.fixedDeltaTime 값(0.02)을 알아서 반환해 줍니다.
 
